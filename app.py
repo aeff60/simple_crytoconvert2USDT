@@ -68,7 +68,7 @@ def home():
         selectValuecoinstr = " "
         selectValuebalancestr = "0"
     print(listCookie)
-    resp = make_response(render_template('home.html', data=data_list2, coinsymbol=selectValuecoinstr, valuebalance=selectValuebalancestr, data_jsonsymbol=data_jsonsymbol))
+    resp = make_response(render_template('index.html', data=data_list2, coinsymbol=selectValuecoinstr, valuebalance=selectValuebalancestr, data_jsonsymbol=data_jsonsymbol))
     resp.set_cookie('symbol',"data") 
     return resp
       
