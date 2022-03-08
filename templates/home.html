@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title> Home </title>
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/style.css') }}" >
+</head>
+<body>
+<div class="header">
+    <h1> ยอดเงินของฉัน</h1>
+
+    {% if data_jsonsymbol != " " %}
+    <h2> {{ data_jsonsymbol }} USD</h2>
+   {% endif %}
+    
+</div>
+
+<div class="content">
+
+  <form method = "post" action="">  
+       
+        <select name="coin" id="coin">
+          {% for item in data %}
+          <option name="symbol"> {{item}} </option>
+          {% endfor %}
+        </select>
+        
+          &nbsp;<input type="text" id="balance" name="balance"> <input type="Submit" value="Summit" id="button">
+          
+        <br><br>
+        <label for="fname"> ชื่อเหรียญ {{ coinsymbol }}  : คุณมีทั้งหมด {{ valuebalance }} เหรียญ : ราคาที่แปลงได้เท่ากับ {{ data_jsonsymbol }} USDT</label>
+        <br><br> 
+      </form>
+</div>
+</body>
+</html>
